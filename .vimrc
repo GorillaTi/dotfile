@@ -51,3 +51,32 @@ endif
 
 " No visualizar estado
 set noshowmode
+
+" Habilitando Manejador de Pugins
+call plug#begin('~/.vim/plugged')
+
+" Themes
+Plug 'morhetz/gruvbox'
+
+" IDE
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+
+call plug#end()
+
+" Configuracion del Tema
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+
+" Configurando Cierra Automatio de nerdtree
+let NERDTreeQuitOnOpen=1
+
+" Tecla lider
+let mapleader=" "
+
+"Ejecutar easymotion
+nmap <Leader>s <Plug>(easymotion-s2)
+
+"Ejecutar nerdtree
+nmap <Leader>nt :NERDTreeFind<CR>
