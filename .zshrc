@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/sysadmin/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,5 +136,4 @@ alias ls='lsd --group-dirs=first'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
-# FZF
-# export FZF_BASE=/home/sysadmin/.oh-my-zsh/custom/plugins/fzf-zsh
+alias update='sudo apt update && sudo apt dist-upgrade'

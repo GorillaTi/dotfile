@@ -56,7 +56,7 @@ set noshowmode
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 " IDE
 Plug 'easymotion/vim-easymotion'
@@ -66,8 +66,8 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Configuracion del Tema
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
+"colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'hard'
 
 " Configurando Cierra Automatio de nerdtree
 let NERDTreeQuitOnOpen=1
