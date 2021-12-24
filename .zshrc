@@ -127,6 +127,7 @@ alias cat="/usr/bin/bat"
 alias catn="/usr/bin/cat"
 alias catnl="/usr/bin/cat --paging=never"
 
+alias l='lsd -l --group-dirs=first'
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -136,4 +137,4 @@ alias ls='lsd --group-dirs=first'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
-alias update='sudo apt update && sudo apt dist-upgrade'
+alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
