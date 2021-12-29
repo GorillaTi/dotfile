@@ -1,0 +1,118 @@
+## Tuneles y configuraciones SSH
+## Creado por ecespedes
+StrictHostKeyChecking no
+XAuthLocation /opt/x11/bin/xauth
+ForwardAgent Yes
+#Ciphers 3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com
+#MACs hmac-sha1,hmac-sha1-96,hmac-sha2-256,hmac-sha2-512,hmac-md5,hmac-md5-96,umac-64@openssh.com,umac-128@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-md5-etm@openssh.com,hmac-md5-96-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com
+#HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com
+#KexAlgorithms diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,curve25519-sha256,curve25519-sha256@libssh.org,sntrup4591761x25519-sha512@tinyssh.org
+
+## Servidores Antiguos
+Host siaco
+Hostname 200.87.14.227
+	User sysadmin
+
+Host rcpersonal
+Hostname 200.87.14.230
+	User sysadmin
+
+Host pruebas
+Hostname 181.115.185.46
+	User sysadmin
+
+Host pagos
+Hostname 200.87.14.226
+	User sysadmin
+Host sigma
+Hostname 192.168.20.51
+	User root
+	KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+
+## Hipervisores
+Host hpv01
+Hostname 192.168.200.101
+	User root
+
+Host hpv02
+Hostname 192.168.200.102
+	User root
+
+Host hpv03
+Hostname 192.168.200.103
+	User root
+
+Host hpv06
+Hostname 192.168.200.106
+	User root
+
+## Servidores Nuevos
+Host correo
+Hostname 200.87.14.229
+	User sysadmin
+
+Host ns01
+Hostname 181.115.185.44
+	User sysadmin
+
+Host ns11
+Hostname 192.168.200.70
+	User sysadmin
+
+Host ntp01
+Hostname 192.168.200.212
+	User sysadmin
+
+Host web01
+Hostname 192.168.200.50
+	User sysadmin
+
+Host db01
+Hostname 192.168.200.60
+	User sysadmin
+
+Host db02
+Hostname 192.168.200.61
+	User sysadmin
+
+Host app-test01
+Hostname 192.168.200.51
+	User sysadmin
+
+Host app01
+Hostname 192.168.200.52
+	User sysadmin
+
+Host chat
+Hostname 192.168.200.214
+	User sysadmin
+
+Host chat01
+Hostname 192.168.200.214
+	User sysadmin
+
+Host pxe01
+Hostname 192.168.200.220
+	User sysadmin
+
+Host nfs01
+Hostname 192.168.200.199
+	User sysadmin
+
+Host pbs01
+Hostname 192.168.200.219
+	User root
+
+Host sc01
+#Hostname 192.168.200.230
+Hostname 181.115.185.45
+	User sysadmin
+
+## Proxy Inverso
+Host prx01
+Hostname 192.168.200.91
+	User sysadmin
+
+Host prx02
+Hostname 192.168.200.90
+	User sysadmin

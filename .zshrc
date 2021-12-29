@@ -136,5 +136,7 @@ alias ls='lsd --group-dirs=first'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
+alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
+
 # FZF
 # export FZF_BASE=/home/sysadmin/.oh-my-zsh/custom/plugins/fzf-zsh
