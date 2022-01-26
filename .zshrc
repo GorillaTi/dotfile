@@ -138,3 +138,6 @@ alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
 alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
+
+# Plugins
+source /usr/share/zsh-plugins/sudo.plugin.zsh
