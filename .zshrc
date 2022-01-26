@@ -138,15 +138,6 @@ alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
 alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
-<<<<<<< HEAD
 
 # Plugins
 source /usr/share/zsh-plugins/sudo.plugin.zsh
-=======
-<<<<<<< HEAD
-
-# FZF
-# export FZF_BASE=/home/sysadmin/.oh-my-zsh/custom/plugins/fzf-zsh
-=======
->>>>>>> aaef79e0523fbd0b87948b6830fcfb551ea3fa8b
->>>>>>> e92078618d5c5eba48d2639e29152e2054636f1b
