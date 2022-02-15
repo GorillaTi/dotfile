@@ -13,28 +13,46 @@ ForwardAgent Yes
 # Si antecede las host 
 # 	"rmt-" es conexion remota
 # 	"int-" es conexion interna
+
 # Administration Host
 Host int-admin
 Hostname 192.168.200.254
 	User sysadmin
 
 # Servidores Antiguos
+##SIACO
 Host rmt-siaco
 Hostname 200.87.14.227
 	User sysadmin
 
+Host int-siaco
+Hostname 192.168.200.30
+	User sysadmin
+##RC-PERSONAL
 Host rmt-rcpersonal
 Hostname 200.87.14.230
 	User sysadmin
 
+Host int-rcpersonal
+Hostname 192.168.200.40
+	User sysadmin
+##PRUEBAS
 Host rmt-pruebas
 Hostname 181.115.185.46
 	User sysadmin
 
+Host int-pruebas
+Hostname 192.168.200.8
+	User sysadmin
+##PAGOS
 Host rmt-pagos
 Hostname 200.87.14.226
 	User sysadmin
 
+Host int-pagos
+Hostname 192.168.200.41
+	User sysadmin
+##SIGMA
 Host int-sigma
 Hostname 192.168.20.51
 	User root
@@ -58,10 +76,11 @@ Hostname 192.168.200.106
 	User root
 
 # Servidores Nuevos
+##MAIL SERVER
 Host rmt-correo
 Hostname 200.87.14.229
 	User sysadmin
-
+##DOMAIN NAME SERVERs
 Host rmt-ns01
 Hostname 181.115.185.44
 	User sysadmin
@@ -69,11 +88,11 @@ Hostname 181.115.185.44
 Host int-ns11
 Hostname 192.168.200.70
 	User sysadmin
-
+##LEGAT TIME
 Host int-ntp01
 Hostname 192.168.200.212
 	User sysadmin
-
+##WEB SERVER
 Host int-web01
 Hostname 192.168.200.50
 	User sysadmin
@@ -81,7 +100,7 @@ Hostname 192.168.200.50
 Host rmt-web01
 Hostname 181.115.185.43 
 	User sysadmin
-
+##DATA BASEs
 Host int-db01
 Hostname 192.168.200.60
 	User sysadmin
@@ -89,7 +108,7 @@ Hostname 192.168.200.60
 Host int-db02
 Hostname 192.168.200.61
 	User sysadmin
-
+##APLICATION SERVERs
 Host int-app-test01
 Hostname 192.168.200.51
 	User sysadmin
@@ -97,23 +116,19 @@ Hostname 192.168.200.51
 Host int-app01
 Hostname 192.168.200.52
 	User sysadmin
-
+##CHAT SERVER
 Host int-chat
 Hostname 192.168.200.214
 	User sysadmin
-
-#Host int-chat01
-#Hostname 192.168.200.214
-#	User sysadmin
-
+##HELPDESK SERVER
 Host int-mc01
 Hostname 192.168.200.215
 	User sysadmin
-
+##PXE-BOOT SERVER
 Host int-pxe01
 Hostname 192.168.200.220
 	User sysadmin
-
+##STORAGE SERVER
 Host int-nfs01
 Hostname 192.168.200.199
 	User sysadmin
@@ -121,17 +136,24 @@ Hostname 192.168.200.199
 Host int-pbs01
 Hostname 192.168.200.219
 	User root
-
-Host int-sc01
-#Hostname 192.168.200.230
+##CORRESPONDENCIA
+Host rmt-sc01
 Hostname 181.115.185.45
 	User sysadmin
 
-## Proxy Inverso
+Host int-sc01
+Hostname 192.168.200.230
+	User sysadmin
+	
+##REVERSE PROXY 
+Host rmt-prx01
+Hostname 181.115.185.45
+	User sysadmin
+
 Host int-prx01
-Hostname 192.168.200.91
+Hostname 192.168.200.90
 	User sysadmin
 
 Host int-prx02
-Hostname 192.168.200.90
+Hostname 192.168.200.91
 	User sysadmin
