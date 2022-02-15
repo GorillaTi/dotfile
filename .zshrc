@@ -84,6 +84,8 @@ zsh-autosuggestions
 zsh-completions
 tmux
 fzf
+docker
+docker-compose
 )
 autoload -U compinit && compinit
 
