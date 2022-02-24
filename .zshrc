@@ -139,7 +139,7 @@ alias ls='lsd --group-dirs=first'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
-alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
+alias osupgrade='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'
 
 # Plugins
 source /usr/share/zsh-plugins/sudo.plugin.zsh
