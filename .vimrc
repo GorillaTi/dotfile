@@ -1,82 +1,49 @@
-" enable syntax highlighting
-syntax enable
+syntax on                       "Enable syntax highlighting
 
-" Habilitar Codificacion de archivos
-set encoding=UTF-8
+" configuration
+set mouse=a                     "Activar uso del mouse
+set encoding=UTF-8              "Habilitar Codificacion de archivos
+set noerrorbells                "No sound of error
 
-" automatically indent lines (default)
-" set noautoindent
+" configs tabular
+set sw=2                        "Reemplaza tabulacion por espacios
+set expandtab                   "Tabular in spaces
+set smartindent                 "Automatically indent lines (default)
 
-" select case-insenitiv search (not default)
-" set ignorecase
+" config colum numbers
+set number                      "Mostrar numeracion de lineas
+set relativenumber              "Habilitacion Numeros Relativos (rnu)
+set numberwidth=1               "Espacio de la columna de numeros
 
-" Mostrar numeracion de lineas
-set number
-set numberwidth=1
+" habilirar portapapeles
+set clipboard=unnamed           "Clipboard Primary or copy-on-select midle boton mouse
+set clipboard=unnamedplus       "Clipboard os sistem Ctrl+c Ctrl+v
 
-" Habilirar Portapapeles
-set clipboard=unnamed
+" config cursor
+set cursorline                  "Line on Curso
 
-" Activar uso del mouse
-set mouse=a
+" searching
+set ignorecase                  "select case-insenitiv search (not default)
+set incsearch                   "Search incremental
 
-" Habilitar mostrar comandos en ejecucion
-set showcmd
+" SwapFile
+set  noswapfile                 "no swapfile
 
-" show cursor line and column in the status line
-set ruler
+" Backup File
+set nobackup                    "no backup file
 
-" show matching brackets
-set showmatch
-
-" Reemplaza tabulacion por espacios
-set sw=2
-
-" Habilitacion Numeros Relativos
-"set relativenumber 
-
-" display mode INSERT/REPLACE/?
-set showmode
-
-" Powerline
-"set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-
-" Always show statusline
-set laststatus=2
-
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+" Status Bar
+set showcmd                     "Habilitar mostrar comandos en ejecucion
+set ruler                       "show cursor line and column in the status line in neovim
+set showmatch                   "show matching brackets
+"set showmode                    "display mode INSERT/REPLACE/?
+set laststatus=2                "Always show statusline
 if !has('gui_running')
-  set t_Co=256
+  set t_Co=256                  "Use 256 colours (Use this setting only if your terminal supports 256 colours)
 endif
+set noshowmode                  "No visualizar estado en la barra de estado inferiror 
 
-" No visualizar estado
-set noshowmode
-
-" Habilitando Manejador de Pugins
-call plug#begin('~/.vim/plugged')
-
-" Themes
-"Plug 'morhetz/gruvbox'
-
-" IDE
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
-
-call plug#end()
-
-" Configuracion del Tema
-"colorscheme gruvbox
-"let g:gruvbox_contrast_dark = 'hard'
-
-" Configurando Cierra Automatio de nerdtree
-let NERDTreeQuitOnOpen=1
-
-" Tecla lider
-let mapleader=" "
-
-"Ejecutar easymotion
-nmap <Leader>s <Plug>(easymotion-s2)
-
-"Ejecutar nerdtree
-nmap <Leader>nt :NERDTreeFind<CR>
+"" Included
+so ~/.vim/plugins.vim
+so ~/.vim/plugins-config.vim
+so ~/.vim/maps.vim
