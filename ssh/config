@@ -141,10 +141,15 @@ Host rmt-sc01
 Hostname 181.115.185.45
 	User sysadmin
 
+##GESTOR_DOCUMENTAL	
 Host int-sc01
 Hostname 192.168.200.230
 	User sysadmin
-	
+
+Host int-gd01
+Hostname 192.168.200.231
+	User sysadmin
+
 ##REVERSE PROXY 
 Host rmt-prx01
 Hostname 181.115.185.45
@@ -157,3 +162,15 @@ Hostname 192.168.200.90
 Host int-prx02
 Hostname 192.168.200.91
 	User sysadmin
+
+##Port Forwarder
+#Proxmox
+Host fw-prx-x1
+Hostname 181.115.185.46
+	User sysadmin
+	LocalForward 8006 192.168.200.102:8006
+
+Host fw-prx-x2
+Hostname 200.87.14.230
+	User sysadmin
+	LocalForward 8006 192.168.200.102:8006

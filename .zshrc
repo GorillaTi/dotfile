@@ -9,8 +9,11 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
-
+if [[ "$USER" != "root" ]]; then
+  export ZSH="/home/$USER/.oh-my-zsh";
+else
+  export ZSH="/$USER/.oh-my-zsh";
+fi  
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -79,9 +82,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
-zsh-syntax-highlighting
-zsh-autosuggestions
-zsh-completions
+#zsh-syntax-highlighting
+#zsh-autosuggestions
+#zsh-completions
 tmux
 fzf
 docker
@@ -139,7 +142,10 @@ alias ls='lsd --group-dirs=first'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 
-alias osupgrade='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'
+alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
+alias osclear='sudo apt autoremove -y && sudo apt autoclean'
 
 # Plugins
 source /usr/share/zsh-plugins/sudo.plugin.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
