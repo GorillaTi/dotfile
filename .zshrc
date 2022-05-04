@@ -81,14 +81,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+tmux
+fzf
 git
+docker
+docker-compose
+ansible
+terraform
 #zsh-syntax-highlighting
 #zsh-autosuggestions
 #zsh-completions
-tmux
-fzf
-docker
-docker-compose
+history
 )
 autoload -U compinit && compinit
 
@@ -149,3 +152,7 @@ alias osclear='sudo apt autoremove -y && sudo apt autoclean'
 source /usr/share/zsh-plugins/sudo.plugin.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
