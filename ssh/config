@@ -15,6 +15,7 @@ ForwardAgent Yes
 # 	"int-" es conexion interna
 
 # Administration Host
+##PC Administration
 Host int-admin
 Hostname 192.168.200.254
 	User sysadmin
@@ -88,7 +89,7 @@ Hostname 181.115.185.44
 Host int-ns11
 Hostname 192.168.200.70
 	User sysadmin
-##LEGAT TIME
+##LEGAL TIME
 Host int-ntp01
 Hostname 192.168.200.212
 	User sysadmin
@@ -101,14 +102,19 @@ Host rmt-web01
 Hostname 181.115.185.43 
 	User sysadmin
 ##DATA BASEs
+###MariaDB Prod
 Host int-db01
 Hostname 192.168.200.60
 	User sysadmin
-
+###PostgreSQL Prod
 Host int-db02
 Hostname 192.168.200.61
 	User sysadmin
-##APLICATION SERVERs
+###PostgreSQL Test
+Host int-db04
+	Hostname 192.168.200.64
+	user sysadmin
+#APLICATION SERVERs
 Host int-app-test01
 Hostname 192.168.200.51
 	User sysadmin
@@ -174,3 +180,13 @@ Host fw-prx-x2
 Hostname 200.87.14.230
 	User sysadmin
 	LocalForward 8006 192.168.200.102:8006
+#Web Internas
+Host fw-web-x1
+Hostname 181.115.185.46
+	User sysadmin
+	LocalForward 8006 192.168.200.50:80
+
+Host fw-web-x2
+Hostname 200.87.14.230
+	User sysadmin
+	LocalForward 8006 192.168.200.50:80
