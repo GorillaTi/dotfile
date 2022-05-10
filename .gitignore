@@ -1,0 +1,4 @@
+# exclude everything archive windows .ini
+*.ini
+# exclude everything directory .vim/plugged
+.vim/plugged/**
