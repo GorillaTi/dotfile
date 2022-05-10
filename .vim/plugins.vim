@@ -3,14 +3,19 @@ call plug#begin('~/.vim/plugged')
 
 " syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 
 " status bar
 Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
-" themes
+" Themes
+""Gruvbox
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
+""PaperColor
+Plug 'NLKNguyen/papercolor-theme'
 
 " tree
 Plug 'scrooloose/nerdtree'

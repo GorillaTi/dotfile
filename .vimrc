@@ -43,6 +43,10 @@ if !has('gui_running')
 endif
 set noshowmode                  "No visualizar estado en la barra de estado inferiror 
 
+"Themes
+""Horizon
+"set termguicolors
+
 "" Included
 so ~/.vim/plugins.vim
 so ~/.vim/plugins-config.vim
