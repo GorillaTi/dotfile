@@ -15,20 +15,27 @@ ForwardAgent Yes
 # 	"int-" es conexion interna
 
 # Administration Host
+#
 ##PC Administration
 Host int-admin
 Hostname 192.168.200.254
 	User sysadmin
 
 # Servidores Antiguos
+#
 ##SIACO
 Host rmt-siaco
 Hostname 200.87.14.227
 	User sysadmin
+	HostkeyAlgorithms +ssh-rsa
+	PubkeyAcceptedAlgorithms +ssh-rsa
 
 Host int-siaco
 Hostname 192.168.200.30
 	User sysadmin
+	HostkeyAlgorithms +ssh-rsa
+	PubkeyAcceptedAlgorithms +ssh-rsa
+	
 ##RC-PERSONAL
 Host rmt-rcpersonal
 Hostname 200.87.14.230
@@ -37,6 +44,7 @@ Hostname 200.87.14.230
 Host int-rcpersonal
 Hostname 192.168.200.40
 	User sysadmin
+	
 ##PRUEBAS
 Host rmt-pruebas
 Hostname 181.115.185.46
@@ -45,6 +53,7 @@ Hostname 181.115.185.46
 Host int-pruebas
 Hostname 192.168.200.8
 	User sysadmin
+	
 ##PAGOS
 Host rmt-pagos
 Hostname 200.87.14.226
@@ -53,6 +62,7 @@ Hostname 200.87.14.226
 Host int-pagos
 Hostname 192.168.200.41
 	User sysadmin
+	
 ##SIGMA
 Host int-sigma
 Hostname 192.168.20.51
@@ -77,22 +87,41 @@ Hostname 192.168.200.106
 	User root
 
 # Servidores Nuevos
+#
 ##MAIL SERVER
-Host rmt-correo
+Host rmt-correo-old
 Hostname 200.87.14.229
 	User sysadmin
+
+Host rmt-correo
+Hostname 181.115.201.101
+	User sysadmin
+
+Host int-correo
+Hostname 192.168.200.230
+	User sysadmin
+
 ##DOMAIN NAME SERVERs
+#
+###NS01
 Host rmt-ns01
 Hostname 181.115.185.44
 	User sysadmin
-
+##NS02
+Host rmt-ns02
+Hostname 181.115.201.98
+	User sysadmin
+#
+###NS11
 Host int-ns11
 Hostname 192.168.200.70
 	User sysadmin
+#
 ##LEGAL TIME
 Host int-ntp01
 Hostname 192.168.200.212
 	User sysadmin
+#
 ##WEB SERVER
 Host int-web01
 Hostname 192.168.200.50
@@ -101,92 +130,104 @@ Hostname 192.168.200.50
 Host rmt-web01
 Hostname 181.115.185.43 
 	User sysadmin
+#	
 ##DATA BASEs
+#
 ###MariaDB Prod
 Host int-db01
 Hostname 192.168.200.60
 	User sysadmin
+#
 ###PostgreSQL Prod
 Host int-db02
 Hostname 192.168.200.61
 	User sysadmin
+#
 ###PostgreSQL Test
 Host int-db04
 	Hostname 192.168.200.64
 	user sysadmin
+	
 #APLICATION SERVERs
 Host int-app-test01
 Hostname 192.168.200.51
 	User sysadmin
-
+#
 Host int-app01
 Hostname 192.168.200.52
 	User sysadmin
+#
 ##CHAT SERVER
 Host int-chat
 Hostname 192.168.200.214
 	User sysadmin
+#	
 ##HELPDESK SERVER
 Host int-mc01
 Hostname 192.168.200.215
 	User sysadmin
+#	
 ##PXE-BOOT SERVER
 Host int-pxe01
 Hostname 192.168.200.220
 	User sysadmin
+#
 ##STORAGE SERVER
 Host int-nfs01
 Hostname 192.168.200.199
 	User sysadmin
-
+#
 Host int-pbs01
 Hostname 192.168.200.219
 	User root
+#	
 ##CORRESPONDENCIA
 Host rmt-sc01
 Hostname 181.115.185.45
 	User sysadmin
-
+#
 ##GESTOR_DOCUMENTAL	
 Host int-sc01
 Hostname 192.168.200.230
 	User sysadmin
-
+#
 Host int-gd01
 Hostname 192.168.200.231
 	User sysadmin
-
+#
 ##REVERSE PROXY 
 Host rmt-prx01
 Hostname 181.115.185.45
 	User sysadmin
-
+#
 Host int-prx01
 Hostname 192.168.200.90
 	User sysadmin
-
+#
 Host int-prx02
 Hostname 192.168.200.91
 	User sysadmin
-
+#
 ##Port Forwarder
+#
 #Proxmox
-Host fw-prx-x1
+Host fw-test-hpv2
 Hostname 181.115.185.46
 	User sysadmin
 	LocalForward 8006 192.168.200.102:8006
-
-Host fw-prx-x2
+#
+Host fw-rc-hpv2
 Hostname 200.87.14.230
 	User sysadmin
 	LocalForward 8006 192.168.200.102:8006
+#	
 #Web Internas
-Host fw-web-x1
+Host fw-test-web01
 Hostname 181.115.185.46
 	User sysadmin
 	LocalForward 8006 192.168.200.50:80
-
-Host fw-web-x2
+#
+Host fw-rc-web01
 Hostname 200.87.14.230
 	User sysadmin
 	LocalForward 8006 192.168.200.50:80
