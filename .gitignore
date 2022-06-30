@@ -2,3 +2,4 @@
 *.ini
 # exclude everything directory .vim/plugged
 .vim/plugged/**
+#**/plugged/**
