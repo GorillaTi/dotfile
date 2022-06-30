@@ -34,8 +34,8 @@
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
     dir                     # current directory
-    vcs                     # git status
     context                 # user@hostname
+    #vcs                     # git status
     command_execution_time  # duration of the last command
     status                  # exit code of the last command
     # =========================[ Line #2 ]=========================
@@ -51,6 +51,7 @@
     # =========================[ Line #1 ]=========================
     #status                  # exit code of the last command
     #command_execution_time  # duration of the last command
+    vcs                     # git status
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
