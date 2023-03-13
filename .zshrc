@@ -84,14 +84,16 @@
        tmux
        fzf
        git
+       nmap
+       python
+       rsync
        docker
        docker-compose
        ansible
        terraform
-       #zsh-syntax-highlighting
-       #zsh-autosuggestions
-       #zsh-completions
+       vagrant
        sudo
+       zsh-interactive-cd
        history
        )
        autoload -U compinit && compinit
@@ -143,18 +145,66 @@
        alias lla='lsd -lha --group-dirs=first'
        alias ls='lsd --group-dirs=first'
 
+       # Alias de configuracio de servicios
        alias zshconfig='vim ~/.zshrc'
        alias vimconfig='vim ~/.vimrc'
-
+       alias vimconfigplug='vim ~/.vim/plugins.vim'
+       alias vimconfigplugconf='vim ~/.vim/plugins-config.vim'
+       alias vimconfigmap='vim ~/.vim/maps.vim'
+       alias p10kconfig='vim ~/.p10k.zsh'
+       alias sshconfig='vim ~/.ssh/config'
+       
        #alias osupgrade='sudo apt update && sudo apt dist-upgrade -y'
-       alias osupgrade='sudo dnf upgrade -y'
+       alias osupgrade='sudo dnf upgrade -y ; flatpak update -y'
        #alias osclear='sudo apt autoremove -y && sudo apt autoclean'
+       
+       # Cleaning DNS cache
+       alias dns-clear='sudo systemd-resolve --flush-cache'
+       
+       # Alias nvim with vim
+       if [ -f /usr/bin/nvim ]
+       then
+         alias vim='/usr/bin/nvim'
+         alias vimn='/usr/bin/vim' 
+       else
+         alias vim='/usr/bin/vim' 
+       fi
+       # Alias update fonts
+       alias update-fonts='sudo fc-cache -fv' 
 
+       #Sesion Tmux
+       alias tmuxsesion='tmux new -t tmux1'
+       
        # Plugins
        #source /usr/share/zsh-plugins/sudo.plugin.zsh
        source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+       
        autoload -Uz compinit
        zstyle ':completion:*' menu select
        fpath+=~/.zfunc
+      
+       #Function
+       # add this to easily extract compressed files, use extract <filename> to extract 
+       extract () {
+        if [ -f $1  ] ; then
+          case $1 in
+            *.tar.bz2)    tar xvjf $1    ;;
+            *.tar.gz)    tar xvzf $1    ;;
+            *.tar.xz)    tar xf $1      ;;
+            *.bz2)        bunzip2 $1     ;;
+            *.rar)        unrar x $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)        tar xvf $1     ;;
+            *.tbz2)        tar xvjf $1    ;;
+            *.tgz)        tar xvzf $1    ;;
+            *.zip)        unzip $1       ;;
+            *.Z)        uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *.zpaq)      zpaq x $1        ;;
+            *)        echo "don't know how to extract '$1'..." ;;
+          esac
+        else
+          echo "'$1' is not a valid file!"
+        fi
+      }
