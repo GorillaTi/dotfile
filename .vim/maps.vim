@@ -13,8 +13,10 @@ nnoremap <Leader>< 10<C-w><
 " quick semi
 nnoremap <Leader>; $a;<Esc>
 
-nnoremap <Leader>w :w;<CR>
-nnoremap <Leader>q :q;<CR>
+" Archive Management
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>x :wq<CR>
+nnoremap <Leader>q :q!<CR>
 
 " Shorter Commands
 cnoreabbrev tree NERDTreeToggle
@@ -22,9 +24,9 @@ cnoreabbrev blame Gblame
 cnoreabbrev find NERDTreeFind
 cnoreabbrev diff Gdiff
 
-" Plugs
+" Plugins
 map <Leader>nt :NERDTreeFind<CR>
-map <Leader>p :Files<CR>
+map <Leader>f :Files<CR>
 map <Leader>ag :Ag<CR>
 
 " Tmux navigator
@@ -49,10 +51,53 @@ map <Leader>l :tabnext<CR>
 " buffers
 map <Leader>ob :Buffers<CR>
 
-" Tabs navigation
+" Navigation
 nnoremap <C-j> 10<C-e>
 nnoremap <C-k> 10<C-y>
 nnoremap <Leader>s <Plug>(easymotion-s2)
+
+" Tab Bar
+" Move to previous/next
+nnoremap <silent>    <A-,> <Cmd>BufferPrevious<CR>
+nnoremap <silent>    <A-.> <Cmd>BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> <Cmd>BufferMovePrevious<CR>
+nnoremap <silent>    <A->> <Cmd>BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
+nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
+nnoremap <silent>    <A-3> <Cmd>BufferGoto 3<CR>
+nnoremap <silent>    <A-4> <Cmd>BufferGoto 4<CR>
+nnoremap <silent>    <A-5> <Cmd>BufferGoto 5<CR>
+nnoremap <silent>    <A-6> <Cmd>BufferGoto 6<CR>
+nnoremap <silent>    <A-7> <Cmd>BufferGoto 7<CR>
+nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
+nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
+nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
+" Close buffer
+nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout
+" Close commands
+"                          :BufferCloseAllButCurrent
+"                          :BufferCloseAllButVisible
+"                          :BufferCloseAllButPinned
+"                          :BufferCloseAllButCurrentOrPinned
+"                          :BufferCloseBuffersLeft
+"                          :BufferCloseBuffersRight
+" Magic buffer-picking mode
+nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl <Cmd>BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
 
 " git
 nnoremap <Leader>G :G<cr>
@@ -60,7 +105,7 @@ nnoremap <Leader>gp :Gpush<cr>
 nnoremap <Leader>gl :Gpull<cr>
 
 " Run current file
-nnoremap <Leader>x :!node %<cr>
+nnoremap <Leader>e :!node %<cr>
 
 " Use <c-space> to trigger completion.
 if &filetype == "javascript" || &filetype == "python"
@@ -103,4 +148,11 @@ function! OpenTerminal()
     startinsert!
   endif
 endfunction
+
+" Open Terminal
 nnoremap <C-t> :call OpenTerminal()<CR>
+noremap <leader>tv :botright vnew <Bar> :terminal<cr>
+noremap <leader>th :botright new <Bar> :terminal<cr>
+
+" exit mode
+:imap ii <Esc>

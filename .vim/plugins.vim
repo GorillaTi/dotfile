@@ -1,14 +1,31 @@
 " Habilitando Manejador de Pugins
 call plug#begin('~/.vim/plugged')
 
-" syntax
+" Syntaxis
 Plug 'sheerun/vim-polyglot'
-Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "indexado del codigo para resaltar syntaxis
+" Syntaxis Lenguajes
+Plug 'vim-syntastic/syntastic'
+Plug 'hashivim/vim-terraform' "Terraform sybtaxis and comand
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'pangloss/vim-javascript'    "JavaScript support
+Plug 'leafgarland/typescript-vim' "TypeScript syntax
+Plug 'stephpy/vim-yaml', {'for': 'yaml'} "YAML
+Plug 'godlygeek/tabular' "For markdown syntax
+Plug 'preservim/vim-markdown' "For markdown syntax
 
-" status bar
-Plug 'maximbaz/lightline-ale'
+" Tab Bar
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+
+" Status Bar
+" Lightline
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+" Vim-Airline
+"Plug 'vim-airline/vim-airline'
 
 " Themes
 ""Gruvbox
@@ -16,24 +33,29 @@ Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 ""PaperColor
 Plug 'NLKNguyen/papercolor-theme'
+""Nightfox
+Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
 
-" tree
-Plug 'scrooloose/nerdtree'
+" Icons
+Plug 'ryanoasis/vim-devicons' "iconos a mostrar en el panel de navegacion
 
-" typing
-Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-surround'
+" NerdTree
+Plug 'scrooloose/nerdtree' "panel de navegacion
 
-" tmux
-Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
+" Typing
+Plug 'jiangmiao/auto-pairs' "auto cerrado de llaves y otros
+Plug 'alvan/vim-closetag' "auto cerrado de tags
+Plug 'tpope/vim-surround' "edicion de llaves osimbolos de cierre
 
-" autocomplete
+" Tmux
+Plug 'benmills/vimux' "trabajo de miltiples ventanas
+Plug 'christoomey/vim-tmux-navigator' "navegacion entre ventanas
+
+" Autocomplete
 Plug 'sirver/ultisnips'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
-" test
+" Test
 Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
 
@@ -41,15 +63,16 @@ Plug 'janko-m/vim-test'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 
-" git
-"Plug 'tpope/vim-fugitive'
+" git in vim
+Plug 'tpope/vim-fugitive'
 
+" map repeat . command
 Plug 'tpope/vim-repeat'
 
 call plug#end()
