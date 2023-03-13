@@ -1,3 +1,7 @@
+" Set compatibility to Vim only.
+set nolist
+
+" Turn on syntax highlighting
 syntax on                       "Enable syntax highlighting
 
 " configuration
@@ -46,6 +50,9 @@ set noshowmode                  "No visualizar estado en la barra de estado infe
 "Themes
 ""Horizon
 "set termguicolors
+
+" Configuration of YAML
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:> foldmethod=indent nofoldenable
 
 "" Included
 so ~/.vim/plugins.vim
