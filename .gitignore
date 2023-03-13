@@ -2,4 +2,7 @@
 *.ini
 # exclude everything directory .vim/plugged
 .vim/plugged/**
+# exclude everything directory .vim/pack
+.vim/pack/**
 #**/plugged/**
+ssh_config/**
